@@ -1,4 +1,6 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
+import {useState} from 'react';
 
 function Header(){
 
@@ -11,16 +13,18 @@ function Header(){
 
     }
 
+    const [link, setLink] = useState("Home");
+
     return(
         <>
         <div className='hidden md:flex md:flex-row md:justify-between md:bg-blue-950 text-white'>
             <div className='py-3 px-6'>
                 <ul className='flex flex-row space-x-5'>
-                    <li>Home</li>
+                    <li className='pointer'onClick={()=>{setLink("Home")}}><Link to='./'>Home</Link>{link === "Home"}</li>
                     <li style={styles.vl}></li>
-                    <li>About</li>
+                    <li className='pointer' onClick={()=>{setLink("About")}}><Link to='./About'>About</Link>{link === "About"}</li>
                     <li style={styles.vl}></li>
-                    <li>Contacts</li>
+                    <li className='pointer' onClick={()=>{setLink("Contacts")}}><Link to='./Contacts'>Contacts</Link>{link === "Contacts"}</li>
                 </ul>
 
             </div>
