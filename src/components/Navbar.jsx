@@ -4,6 +4,7 @@ import { BsPerson } from "react-icons/bs";
 import { BsHeart } from "react-icons/bs";
 import { BsTrash } from "react-icons/bs";
 import { BsChevronDown } from "react-icons/bs";
+import { BsList } from "react-icons/bs";
 
 
 const Navbar = () =>{
@@ -18,10 +19,15 @@ const Navbar = () =>{
             <h1 className='text-2xl text-blue-950 font-bold'>Printex</h1>
             <div className='flex flex-row w-3/6 self-center'>
                 <input type='text' placeholder='Search all' style={inputStyle} className='bg-gray-100 rounded-lg px-3 py-2 w-[100%] relative'></input>
-                <div className='absolute right-8 top-8 md:right-96 md:top-20'>
+                <div className='absolute right-24 top-8 md:right-96 md:top-20'>
                   <BsSearch />
 
                 </div>
+
+            </div>
+
+            <div className='md:hidden text-2xl text-blue-950'>
+                <BsList />
 
             </div>
 
