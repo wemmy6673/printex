@@ -5,9 +5,19 @@ import { BsHeart } from "react-icons/bs";
 import { BsTrash } from "react-icons/bs";
 import { BsChevronDown } from "react-icons/bs";
 import { BsList } from "react-icons/bs";
+import { useState } from "react";
+import {Link} from 'react-router-dom';
 
 
 const Navbar = () =>{
+
+    const [dropDownOpen, setDropDownOpen]  = useState(false);
+    const [link, setLink] = useState("Home");
+
+    const toggleDropDown = () =>{
+
+        setDropDownOpen(!dropDownOpen)
+    }
 
     const inputStyle = {
         fontSize: '12px',
@@ -27,9 +37,28 @@ const Navbar = () =>{
             </div>
 
             <div className='md:hidden text-2xl text-blue-950'>
-                <BsList />
+                <BsList onClick={toggleDropDown} />
 
             </div>
+
+           {dropDownOpen && ( <div className='absolute z-20 bg-white w-[80%] items-center ml-[5%] mr-[10%]  mt-72 p-8 transition-all ease-in delay-1000'>
+            <ul className='flex flex-col space-y-5'>
+                    <li className='pointer'onClick={()=>{setLink("Home")}}><Link to='./'>Home</Link>{link === "Home"}</li>
+
+                    <li className='pointer' onClick={()=>{setLink("About")}}><Link to='./About'>About</Link>{link === "About"}</li>
+                
+                    <li className='pointer' onClick={()=>{setLink("Contacts")}}><Link to='./Contacts'>Contacts</Link>{link === "Contacts"}</li>
+                </ul>
+
+            <div className='md:hidden flex flex-col space-y-5'>
+                <BsPerson />
+                <BsHeart />
+                <BsTrash />
+
+            </div>
+
+            </div>
+            )}
 
             <div className='hidden md:flex md:flex-row space-x-5'>
                 <BsPerson />
