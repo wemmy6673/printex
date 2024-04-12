@@ -4,6 +4,7 @@ import { BsPerson } from "react-icons/bs";
 import { BsHeart } from "react-icons/bs";
 import { BsTrash } from "react-icons/bs";
 import { BsChevronDown } from "react-icons/bs";
+import { BsXLg } from "react-icons/bs";
 import { BsList } from "react-icons/bs";
 import { useState } from "react";
 import {Link} from 'react-router-dom';
@@ -13,10 +14,13 @@ const Navbar = () =>{
 
     const [dropDownOpen, setDropDownOpen]  = useState(false);
     const [link, setLink] = useState("Home");
+    const [badgeIcon, setBadgeIcon] = useState('icon');
 
     const toggleDropDown = () =>{
 
         setDropDownOpen(!dropDownOpen)
+
+        setBadgeIcon(badgeIcon === 'icon' ? 'secondicon' : 'icon')
     }
 
     const inputStyle = {
@@ -36,8 +40,26 @@ const Navbar = () =>{
 
             </div>
 
-            <div className='md:hidden text-2xl text-blue-950'>
+            {/* <div className='md:hidden text-2xl text-blue-950'>
                 <BsList onClick={toggleDropDown} />
+
+            </div> */}
+
+            <div onClick={toggleDropDown}>
+                {badgeIcon === 'icon' ? (
+                    <div className='md:hidden text-2xl text-blue-950'>
+                        <BsList />
+
+                    </div>
+
+                ): (
+                    <div className='md:hidden text-2xl text-blue-950'>
+                        <BsXLg />
+
+                    </div>
+                )
+
+                }
 
             </div>
 
