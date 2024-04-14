@@ -6,8 +6,9 @@ import { BsTrash } from "react-icons/bs";
 import { BsChevronDown } from "react-icons/bs";
 import { BsXLg } from "react-icons/bs";
 import { BsList } from "react-icons/bs";
+import Popup from '../components/Popup';
 import { useState } from "react";
-import {Link} from 'react-router-dom';
+import { Fade } from 'react-awesome-reveal';
 
 
 const Navbar = () =>{
@@ -47,13 +48,13 @@ const Navbar = () =>{
 
             <div onClick={toggleDropDown}>
                 {badgeIcon === 'icon' ? (
-                    <div className='md:hidden text-2xl text-blue-950'>
+                    <div className='md:hidden text-2xl text-blue-950 transition duration-600'>
                         <BsList />
 
                     </div>
 
                 ): (
-                    <div className='md:hidden text-2xl text-blue-950'>
+                    <div className='md:hidden text-2xl text-blue-950 transition duration-600'>
                         <BsXLg />
 
                     </div>
@@ -62,25 +63,20 @@ const Navbar = () =>{
                 }
 
             </div>
+            
+    
+           
+           {dropDownOpen && ( 
 
-           {dropDownOpen && ( <div className='absolute z-20 bg-white w-[80%] items-center ml-[5%] mr-[10%]  mt-72 p-8 transition-all ease-in delay-1000'>
-            <ul className='flex flex-col space-y-5'>
-                    <li className='pointer'onClick={()=>{setLink("Home")}}><Link to='./'>Home</Link>{link === "Home"}</li>
+            
+            <Popup />
+            
 
-                    <li className='pointer' onClick={()=>{setLink("About")}}><Link to='./About'>About</Link>{link === "About"}</li>
-                
-                    <li className='pointer' onClick={()=>{setLink("Contacts")}}><Link to='./Contacts'>Contacts</Link>{link === "Contacts"}</li>
-                </ul>
 
-            <div className='md:hidden flex flex-col space-y-5'>
-                <BsPerson />
-                <BsHeart />
-                <BsTrash />
 
-            </div>
-
-            </div>
             )}
+            
+            
 
             <div className='hidden md:flex md:flex-row space-x-5'>
                 <BsPerson />
