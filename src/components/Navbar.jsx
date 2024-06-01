@@ -33,8 +33,8 @@ const Navbar = () =>{
         <div className='flex flex-row justify-between p-6 items-center'>
             <h1 className='text-2xl text-blue-950 font-bold'>Printex</h1>
             <div className='flex flex-row w-3/6 self-center'>
-                <input type='text' placeholder='Search all' style={inputStyle} className='bg-gray-100 rounded-lg px-3 py-2 w-[100%] relative'></input>
-                <div className='absolute right-24 top-8 md:right-96 md:top-20'>
+                <input type='text' placeholder='Search all' style={inputStyle} className='bg-gray-100 md:left-40 rounded-lg px-3 py-2 w-[100%] relative'></input>
+                <div className='absolute right-24 top-8 md:right-72 md:top-20'>
                   <BsSearch />
 
                 </div>
