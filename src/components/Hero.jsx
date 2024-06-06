@@ -1,7 +1,13 @@
 import React from 'react';
 import Cop from '../images/Cop.png';
+import {Link} from 'react-router-dom';
+import { useState } from 'react';
+import ProductDisplay from './ProductDisplay';
+
 
 const Hero = () =>{
+
+    
 
     return(
         <>
@@ -13,8 +19,10 @@ const Hero = () =>{
                 <p className='text-gray-400 md:w-1/2 my-6'>
                     For more than 36 years, we have been one of the leading suppliers of embroidered and woven brands.
                 </p>
-
-                <button className='text-white bg-blue-950 md:w-1/4 py-4 cursor-pointer'>See Products</button>
+              
+                <button className='text-white bg-blue-950 md:w-1/4 py-4 cursor-pointer'><Link to='./ProductDisplay'>See Products</Link></button>
+                
+              
 
             </div>
 

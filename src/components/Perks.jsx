@@ -8,7 +8,7 @@ const Perks = () =>{
 
     return(
 
-        <div className='flex flex-col md:flex-row mx-20 md:justify-center md:mx-16 md:space-x-10 py-10'>
+        <div className='flex flex-col md:flex-row mx-20 md:justify-center md:space-x-6 py-10 md:mx-0 md:px-28'>
             <div className='py-6 md:py-6 md:px-20 md:w-1/4 shadow-md items-center'>
                 <img src={Delivery} alt="" className='mx-auto' />
                 <p className='text-blue-950 text-sm font-bold text-center'>Free Delivery</p>

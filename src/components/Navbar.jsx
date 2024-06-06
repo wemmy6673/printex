@@ -79,9 +79,9 @@ const Navbar = () =>{
             
 
             <div className='hidden md:flex md:flex-row space-x-5'>
-                <BsPerson />
-                <BsHeart />
-                <BsTrash />
+                <div className='rounded-full bg-gray-100 p-1'><BsPerson /></div>
+                <div className='rounded-full bg-gray-100 p-1'><BsHeart /></div>
+                <div className='rounded-full bg-gray-100 p-1'><BsTrash /></div>
 
             </div>
 

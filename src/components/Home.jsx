@@ -3,6 +3,7 @@ import Hero from '../components/Hero';
 import Perks from './Perks';
 import Popular from './Popular';
 import Arrivals from './Arrivals';
+import ShopCategory from './ShopCategory';
 
 const Home = () =>{
 
@@ -12,6 +13,7 @@ const Home = () =>{
         <Perks />
         <Popular />
         <Arrivals />
+        <ShopCategory />
         </>
     )
 }
