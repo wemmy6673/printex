@@ -1,5 +1,72 @@
 import React from 'react';
 import { BsSearch } from "react-icons/bs";
+import Cap from '../images/Cap.png';
+
+const Items = [{
+    id: 1,
+    title: "Under Armour Training stretch Woven Half Zip Jacket In White",
+    new_price: 200,
+    old_price: 250,
+    image: Cap,
+},
+{
+    id: 2,
+    title: "Under Armour Training stretch Woven Half Zip Jacket In White",
+    new_price: 200,
+    old_price: 250,
+    image: Cap,
+},
+{
+    id: 3,
+    title: "Under Armour Training stretch Woven Half Zip Jacket In White",
+    new_price: 200,
+    old_price: 250,
+    image: Cap,
+},
+{
+    id: 4,
+    title: "Under Armour Training stretch Woven Half Zip Jacket In White",
+    new_price: 200,
+    old_price: 250,
+    image: Cap,
+},
+{
+    id: 5,
+    title: "Under Armour Training stretch Woven Half Zip Jacket In White",
+    new_price: 200,
+    old_price: 250,
+    image: Cap,
+},
+{
+    id: 6,
+    title: "Under Armour Training stretch Woven Half Zip Jacket In White",
+    new_price: 200,
+    old_price: 250,
+    image: Cap,
+},
+{
+    id: 7,
+    title: "Under Armour Training stretch Woven Half Zip Jacket In White",
+    new_price: 200,
+    old_price: 250,
+    image: Cap,
+},
+{
+    id: 8,
+    title: "Under Armour Training stretch Woven Half Zip Jacket In White",
+    new_price: 200,
+    old_price: 250,
+    image: Cap,
+},
+{
+    id: 9,
+    title: "Under Armour Training stretch Woven Half Zip Jacket In White",
+    new_price: 200,
+    old_price: 250,
+    image: Cap,
+},
+]
+
 
 const ProductDisplay = () => {
 
@@ -75,7 +142,7 @@ const ProductDisplay = () => {
                 <div className='flex flex-col space-y-2 py-2'>
 
                     <input type="text" placeholder='Keyword' className='border border-blue-950 py-2 pl-8 pr-1 relative' />
-                    <BsSearch className='absolute -bottom-40 mb-1 ml-2 text-blue-950'/>
+                    {/* <BsSearch className='absolute -bottom-40 mb-2 ml-2 text-blue-950'/> */}
 
                     <div className='flex flex-col space-y-3 py-2'>
                     <div className='flex justify-between max-w-sm'>
@@ -130,6 +197,26 @@ const ProductDisplay = () => {
 
                 </div>
 
+
+            </div>
+
+            <div className='flex flex-col w-3/5'>
+                <div className='flex flex-row justify-between text-blue-950 text-sm'>
+                    <div>HOME/PRODUCTS</div>
+                    <div>Sort By</div>
+
+                </div>
+                <div className='grid grid-cols-3 gap-4'>
+                    {Items.map(item =>(
+                        <div key={item.id}>
+                            <div>
+                                <img src={item.image} alt={item.title} />
+
+                            </div>
+                        </div>
+                    ))}
+
+                </div>
 
             </div>
 
