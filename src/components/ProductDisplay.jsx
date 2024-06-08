@@ -1,6 +1,9 @@
 import React from 'react';
 import { BsSearch } from "react-icons/bs";
+import { BsHeartFill } from "react-icons/bs";
+import {BsHeart} from "react-icons/bs";
 import Cap from '../images/Cap.png';
+import { useState } from 'react';
 
 const Items = [{
     id: 1,
@@ -69,6 +72,8 @@ const Items = [{
 
 
 const ProductDisplay = () => {
+
+    const [isHovered, setIsHovered] = useState(false);
 
 
     return(
@@ -200,17 +205,28 @@ const ProductDisplay = () => {
 
             </div>
 
-            <div className='flex flex-col w-3/5'>
-                <div className='flex flex-row justify-between text-blue-950 text-sm'>
+            <div className='flex flex-col'>
+                <div className='flex flex-row text-blue-950 text-sm justify-between px-20'>
                     <div>HOME/PRODUCTS</div>
                     <div>Sort By</div>
 
                 </div>
-                <div className='grid grid-cols-3 gap-4'>
+                <div className='py-10 md:grid md:grid-cols-3 md:gap-10 px-20'>
                     {Items.map(item =>(
-                        <div key={item.id}>
-                            <div>
-                                <img src={item.image} alt={item.title} />
+                        <div className='' key={item.id}>
+                            <div className='flex flex-col space-y-3'>
+                                <img src={item.image} alt={item.title} width='200' height='200' />
+                                <p className='text-sm'>{item.title}</p>
+                                <div className='flex flex-row space-x-4 mx-auto'>
+                                    <p className='text-yellow-400'>${item.new_price}</p>
+                                    <div className='text-red-500 cursor-pointer' onMouseOver={()=>setIsHovered(true)} onMouseOut={()=>setIsHovered(false)}>
+
+                                    {isHovered ? <div className='text-red-500 '><BsHeartFill /></div> : <BsHeart />}
+
+                                    </div>
+
+                                </div>
+                                <button className='text-blue-950 border py-2 font-semibold hover:bg-blue-950 hover:text-white transition duration-0 hover:duration-300 border-blue-950'>ADD TO CART</button>
 
                             </div>
                         </div>
