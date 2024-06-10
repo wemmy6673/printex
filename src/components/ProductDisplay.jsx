@@ -73,12 +73,27 @@ const Items = [{
 
 const ProductDisplay = () => {
 
-    const [isHovered, setIsHovered] = useState(false);
+
+    const click = (e) =>{
+
+       const currentColor = e.currentTarget.style.color;
+       if(currentColor === 'red'){
+
+        e.currentTarget.style.color = '';
+
+       }
+       else{
+        e.currentTarget.style.color = 'red';
+       }
+     
+    }
+
+   
 
 
     return(
 
-        <div className='flex flex-row py-10 px-20'>
+        <div className='flex flex-row space-x-16 py-10 md:py-20 px-20'>
             <div className='flex flex-col space-y-6'>
                 <div className='text-blue-950 font-semibold'>
                     Product Category
@@ -217,11 +232,12 @@ const ProductDisplay = () => {
                             <div className='flex flex-col space-y-3'>
                                 <img src={item.image} alt={item.title} width='200' height='200' />
                                 <p className='text-sm'>{item.title}</p>
-                                <div className='flex flex-row space-x-4 mx-auto'>
+                                <div className='flex flex-row justify-center space-x-4 mx-auto'>
                                     <p className='text-yellow-400'>${item.new_price}</p>
-                                    <div className='text-red-500 cursor-pointer' onMouseOver={()=>setIsHovered(true)} onMouseOut={()=>setIsHovered(false)}>
+                                    <div className='text-gray-100 hover:text-red-500 transition duration-0 hover:duration-300  cursor-pointer' onClick={click}>
+                                        <BsHeartFill />
 
-                                    {isHovered ? <div className='text-red-500 '><BsHeartFill /></div> : <BsHeart />}
+                                    
 
                                     </div>
 

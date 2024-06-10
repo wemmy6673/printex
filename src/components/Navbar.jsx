@@ -79,13 +79,15 @@ const Navbar = () =>{
             
 
             <div className='hidden md:flex md:flex-row space-x-5'>
-                <div className='rounded-full bg-gray-100 p-1'><BsPerson /></div>
-                <div className='rounded-full bg-gray-100 p-1'><BsHeart /></div>
-                <div className='rounded-full bg-gray-100 p-1'><BsTrash /></div>
+                <div className='rounded-full bg-gray-100 p-1'><BsPerson /> </div>
+                <div className='rounded-full bg-gray-100 p-1'><BsHeart /> <span className='bg-green-600 text-white absolute text-xs rounded-full top-16 px-1 right-16'>0</span></div>
+                <div className='rounded-full bg-gray-100 p-1'><BsTrash />
+                <span className='bg-green-600 text-white absolute text-xs rounded-full top-16 px-1 right-5'>0</span></div>
+                </div>
 
             </div>
 
-        </div>
+        
 
         <div className='px-32 hidden md:block'>
             <ul className='text-blue-950 text-sm font-bold flex flex-row justify-between'>
