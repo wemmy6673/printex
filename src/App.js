@@ -8,10 +8,13 @@ import Home from './components/Home';
 import About from './components/About';
 import Contacts from './components/Contacts';
 import ProductDisplay from './components/ProductDisplay';
+import ShopContextProvider from "./components/ShopContext"
 function App() {
   return(
     <>
     <BrowserRouter>
+    <ShopContextProvider>
+
     <Header />
     <Navbar />
     <Routes>
@@ -21,7 +24,10 @@ function App() {
       <Route path='/ProductDisplay' element={<ProductDisplay />} />
 
     </Routes>
+    </ShopContextProvider>
     </BrowserRouter>
+
+
 
     </>
   )

@@ -3,12 +3,18 @@ import { BsSearch } from "react-icons/bs";
 import { BsHeartFill } from "react-icons/bs";
 import {BsHeart} from "react-icons/bs";
 import Items from './Items';
-import { useState } from 'react';
+import { ShopContext } from './ShopContext';
+import { useState, useContext } from 'react';
 
 
 
 
 const ProductDisplay = () => {
+
+
+
+    const contextValue = useContext(ShopContext);
+    const addToLikes = contextValue;
 
 
     const click = (e) =>{
@@ -171,7 +177,7 @@ const ProductDisplay = () => {
                                 <p className='text-sm'>{item.title}</p>
                                 <div className='flex flex-row justify-center space-x-4 mx-auto'>
                                     <p className='text-yellow-400'>${item.new_price}</p>
-                                    <div className='text-gray-100 hover:text-red-500 transition duration-0 hover:duration-300  cursor-pointer' onClick={click}>
+                                    <div className='text-gray-100 hover:text-red-500 transition duration-0 hover:duration-300  cursor-pointer' onClick={addToLikes}>
                                         <BsHeartFill />
 
                                     

@@ -7,7 +7,8 @@ import { BsChevronDown } from "react-icons/bs";
 import { BsXLg } from "react-icons/bs";
 import { BsList } from "react-icons/bs";
 import Popup from '../components/Popup';
-import { useState } from "react";
+import { useState, useContext } from "react";
+import {ShopContext} from './ShopContext';
 import { Fade } from 'react-awesome-reveal';
 
 
@@ -16,6 +17,7 @@ const Navbar = () =>{
     const [dropDownOpen, setDropDownOpen]  = useState(false);
     const [link, setLink] = useState("Home");
     const [badgeIcon, setBadgeIcon] = useState('icon');
+    const contextValue = useContext(ShopContext);
 
     const toggleDropDown = () =>{
 
@@ -80,7 +82,7 @@ const Navbar = () =>{
 
             <div className='hidden md:flex md:flex-row space-x-5'>
                 <div className='rounded-full bg-gray-100 p-1'><BsPerson /> </div>
-                <div className='rounded-full bg-gray-100 p-1'><BsHeart /> <span className='bg-green-600 text-white absolute text-xs rounded-full top-16 px-1 right-16'>0</span></div>
+                <div className='rounded-full bg-gray-100 p-1'><BsHeart /> <span className='bg-green-600 text-white absolute text-xs rounded-full top-16 px-1 right-16'>{contextValue.getTotalLikes()}</span></div>
                 <div className='rounded-full bg-gray-100 p-1'><BsTrash />
                 <span className='bg-green-600 text-white absolute text-xs rounded-full top-16 px-1 right-5'>0</span></div>
                 </div>
